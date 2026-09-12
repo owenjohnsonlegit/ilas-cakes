@@ -58,13 +58,13 @@ form.addEventListener('submit', async event => {
       method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }, signal: controller.signal,
     });
     if (!response.ok) throw new Error('Submission failed');
-    status.textContent = 'Thanks! Your cake request has been sent. I’ll review your date, design, and cake details and get back to you about availability and pricing. Your cake is not confirmed until you receive confirmation from me.';
+    status.textContent = 'Thanks for sending me a cake request! I’ll get back to you about availability and pricing. Your cake isn’t booked until I confirm it with you.';
     status.classList.add('success');
     form.reset();
   } catch (error) {
     status.textContent = error.name === 'AbortError'
-      ? 'The connection timed out, so we couldn’t confirm whether your request arrived. Your details are still here. Please try again when your connection is stable.'
-      : 'Your request could not be sent. Your details are still here—please check your connection and try again.';
+      ? 'The connection timed out. Your request may have arrived, but it wasn’t possible to confirm. Your details are still here if you need to try again.'
+      : 'Your request didn’t go through. Your details are still here. Please check your connection and try again.';
     status.classList.add('error');
   } finally {
     clearTimeout(timeout);
