@@ -41,7 +41,7 @@ const configured = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint);
 if (configured) {
   status.textContent = '';
   submit.disabled = false;
-  submit.textContent = 'Send cake request ↗';
+  submit.textContent = 'Send cake request';
 }
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -70,6 +70,6 @@ form.addEventListener('submit', async event => {
     clearTimeout(timeout);
     form.removeAttribute('aria-busy');
     submit.disabled = false;
-    submit.textContent = 'Send cake request ↗';
+    submit.textContent = 'Send cake request';
   }
 });
