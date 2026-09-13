@@ -23,11 +23,11 @@ document.querySelectorAll('.filter').forEach(button => {
       filter.setAttribute('aria-pressed', String(filter === button));
     });
     let count = 0;
-    document.querySelectorAll('.cake-card').forEach(card => {
+    document.querySelectorAll('#cakes [data-category]').forEach(card => {
       card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
-      if (!card.hidden) count++;
+      if (!card.hidden && card.querySelector('img')) count++;
     });
-    document.querySelector('#gallery-status').textContent = `${count} ${count === 1 ? 'cake' : 'cakes'} shown.`;
+    document.querySelector('#gallery-status').textContent = `${count} ${count === 1 ? 'photo' : 'photos'} shown.`;
   });
 });
 const now = new Date();
@@ -41,7 +41,7 @@ const configured = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint);
 if (configured) {
   status.textContent = '';
   submit.disabled = false;
-  submit.textContent = 'Send cake request';
+  submit.textContent = 'Send request';
 }
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -58,7 +58,7 @@ form.addEventListener('submit', async event => {
       method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }, signal: controller.signal,
     });
     if (!response.ok) throw new Error('Submission failed');
-    status.textContent = 'Thanks for sending me a cake request! I’ll get back to you about availability and pricing. Your cake isn’t booked until I confirm it with you.';
+    status.textContent = 'Thanks for sending me a request! I’ll get back to you about availability and pricing. Your order isn’t booked until I confirm it with you.';
     status.classList.add('success');
     form.reset();
   } catch (error) {
@@ -70,6 +70,6 @@ form.addEventListener('submit', async event => {
     clearTimeout(timeout);
     form.removeAttribute('aria-busy');
     submit.disabled = false;
-    submit.textContent = 'Send cake request';
+    submit.textContent = 'Send request';
   }
 });
