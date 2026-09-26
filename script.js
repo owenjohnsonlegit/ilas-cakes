@@ -16,20 +16,6 @@ document.addEventListener('keydown', event => {
   }
 });
 document.documentElement.classList.add('js');
-document.querySelectorAll('.filter').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.filter').forEach(filter => {
-      filter.classList.toggle('active', filter === button);
-      filter.setAttribute('aria-pressed', String(filter === button));
-    });
-    let count = 0;
-    document.querySelectorAll('#cakes [data-category]').forEach(card => {
-      card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
-      if (!card.hidden && card.querySelector('img')) count++;
-    });
-    document.querySelector('#gallery-status').textContent = `${count} ${count === 1 ? 'photo' : 'photos'} shown.`;
-  });
-});
 const now = new Date();
 document.querySelector('#year').textContent = now.getFullYear();
 document.querySelector('#cake-date').min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;

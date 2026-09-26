@@ -8,3 +8,23 @@
 .ila-portrait{display:block;width:100%;height:390px;object-fit:cover;object-position:60% center;border-radius:8px 8px 44% 8px;border:12px solid #fff5f8;outline:1px solid #e9c9d4}
 .hero-visual>img,.cake-image img{object-position:center 65%}
 @media(max-width:700px){.ila-portrait{height:310px}}
+
+/* Album covers and the full photo collection. */
+.album-intro{margin:20px 0 30px}
+.album-card{display:block;border-radius:8px}
+.album-link{font-size:12px;margin-top:10px;color:var(--rose)}
+.album-link span{margin-left:8px}
+.album-card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.album-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:5px;aspect-ratio:.85;overflow:hidden;border-radius:8px;background:var(--pink)}
+.album-collage img{width:100%;height:100%;min-height:0;object-fit:cover}
+.album-page{padding-block:30px 70px}
+.album-page h1{font-size:clamp(42px,6vw,70px);letter-spacing:-1.5px;margin-top:34px}
+.album-navigation{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.album-status{font-size:12px;margin-bottom:20px}
+.album-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.album-photo{display:block;border-radius:8px;overflow:hidden;background:#fcecf0}
+.album-photo img{width:100%;height:auto}
+.album-photo:hover{outline:1px solid var(--rose);outline-offset:4px}
+#load-more{display:block;margin:32px auto 0}
+@media(max-width:700px){.album-collage{aspect-ratio:1.12}.album-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.album-navigation{gap:4px}.album-page{padding-block:15px 44px}}
+@media(max-width:380px){.album-photos{grid-template-columns:1fr}}

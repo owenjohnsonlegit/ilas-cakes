@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8F7">
+  <title>All cakes &amp; treats · Cakes by Ila</title>
+  <meta name="description" content="Browse Ila’s wedding cakes, birthday cakes, custom cakes, and other treats.">
+  <link rel="icon" href="assets/favicon.svg?v=pink" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="gallery-data.js" defer></script>
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><a class="wordmark" href="index.html" aria-label="Cakes by Ila, home">Cakes <em>by</em> Ila</a><a class="button button-small" href="index.html#request">Request a cake</a></header>
+  <main id="main" class="section-wrap album-page">
+    <a class="text-link" href="index.html#cakes">← Back to albums</a>
+    <div class="section-heading"><h1 id="album-title">All cakes <em>&amp; treats</em></h1></div>
+    <p class="album-intro">Made by Ila, for all kinds of celebrations.</p>
+    <nav class="album-navigation" aria-label="Photo albums">
+      <a class="filter" href="gallery.html" data-album="all">View All</a>
+      <a class="filter" href="gallery.html?album=wedding" data-album="wedding">Wedding cakes</a>
+      <a class="filter" href="gallery.html?album=birthday" data-album="birthday">Birthday cakes</a>
+      <a class="filter" href="gallery.html?album=celebration" data-album="celebration">Custom cakes</a>
+      <a class="filter" href="gallery.html?album=treats" data-album="treats">Other Treats</a>
+    </nav>
+    <p id="gallery-status" class="album-status" role="status"></p>
+    <div id="album-photos" class="album-photos"></div>
+    <button id="load-more" class="button" hidden>Show more photos</button>
+    <noscript><p>Please enable JavaScript to browse the photo albums. You can also <a class="text-link" href="index.html#cakes">see the album covers</a>.</p></noscript>
+    <div class="portfolio-cta"><a class="text-link" href="index.html#request">Tell me what you’re looking for</a></div>
+  </main>
+  <footer class="section-wrap"><a class="wordmark" href="index.html">Cakes <em>by</em> Ila</a><nav aria-label="Footer navigation"><a href="index.html#cakes">My cakes</a><a href="index.html#about">About me</a><a href="index.html#request">Request a cake</a></nav></footer>
+</body>
+</html>

@@ -10,7 +10,9 @@ From this directory run `python3 -m http.server 8080`, then visit `http://localh
 
 - `index.html`: page content, gallery, FAQs, and inquiry fields.
 - `style.css`: responsive layout, brand palette, and typography.
-- `script.js`: mobile navigation, gallery filtering, and Formspree submission states.
+- `script.js`: mobile navigation and Formspree submission states.
+- `gallery.html`, `gallery.js`: category albums and paginated View All collection.
+- `gallery-data.js`: shared photo list for all albums.
 - `config.js`: public Formspree endpoint configuration.
 - `assets/`: original SVG illustrations used as explicitly labeled temporary placeholders, plus the favicon.
 
@@ -26,9 +28,28 @@ Successful submissions clear the form and explain that the cake is not booked. E
 
 ## Photography
 
-Replace the three illustrated gallery examples with approximately 10–15 selected photographs supplied by Ila. Duplicate a `.cake-card` and set `data-category` to `wedding`, `birthday`, or `celebration`. Write factual alt text for each actual cake.
+The homepage has linked covers for Wedding cakes, Birthday cakes, Custom cakes, Other Treats, and View All. Each opens `gallery.html`; the category is stored in the URL so albums can be shared and browser Back works normally.
 
-Export photos as AVIF or WebP at useful widths (for example 480, 800, and 1200 pixels), then add `srcset` and `sizes` to each image. Keep explicit dimensions, lazy loading below the fold, and eager loading for the hero. The current vector placeholders are small and resolution-independent. Replace the portrait placeholder with an approved photograph of Ila. Remove placeholder captions only after the corresponding real assets are in place.
+To add photos:
+
+1. Put the image files in `assets/` (or an `assets/gallery/` subfolder).
+2. Add an entry to `gallery-data.js` for each photo, following the existing entries:
+
+```js
+{
+  src: 'assets/gallery/flower-cake.webp',
+  alt: 'Describe the actual cake and its decorations here',
+  width: 1200,
+  height: 1500,
+  category: 'birthday',
+},
+```
+
+Use `wedding`, `birthday`, `celebration` (Custom cakes), or `treats`. Omit `category` for photos that belong only in View All. Every entry appears in View All automatically, in file order. Put new entries first to show recent work first. Use the image’s actual pixel dimensions and descriptive alt text.
+
+Albums show 24 photos at a time with a Show more photos button and lazy-loaded images, so the collection can grow. Clicking a photo opens the original image. Export web-sized WebP or JPEG images (around 1200 pixels wide) to keep downloads reasonable. The homepage cover photos are edited separately in `index.html`.
+
+This is a static site: photos are added through the project files, with no upload dashboard or database.
 
 ## Before launch
 
