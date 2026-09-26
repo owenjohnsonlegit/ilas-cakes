@@ -32,12 +32,12 @@ The homepage has linked covers for Wedding cakes, Birthday cakes, Custom cakes, 
 
 To add photos:
 
-1. Put the image files in `assets/` (or an `assets/gallery/` subfolder).
-2. Add an entry to `gallery-data.js` for each photo, following the existing entries:
+1. Put the image files in the matching folder under `assets/images/`: `birthday-cakes/`, `custom-cakes/`, `wedding-cakes/`, or `other-treats/`.
+2. Add an entry to `gallery-data.js` for each photo, following the existing entries (new files are not discovered automatically):
 
 ```js
 {
-  src: 'assets/gallery/flower-cake.webp',
+  src: 'assets/images/birthday-cakes/flower-cake.webp',
   alt: 'Describe the actual cake and its decorations here',
   width: 1200,
   height: 1500,
