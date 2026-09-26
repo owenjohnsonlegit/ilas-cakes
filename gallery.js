@@ -1,4 +1,4 @@
-const albums = { all: 'All cakes & treats', wedding: 'Wedding cakes', birthday: 'Birthday cakes', celebration: 'Custom cakes', treats: 'Other Treats' };
+const albums = { all: 'All cakes & treats', wedding: 'Wedding cakes', birthday: 'Birthday cakes', treats: 'Other Treats' };
 const requestedAlbum = new URLSearchParams(window.location.search).get('album');
 const album = Object.hasOwn(albums, requestedAlbum) ? requestedAlbum : 'all';
 document.querySelector('#album-title').textContent = albums[album];

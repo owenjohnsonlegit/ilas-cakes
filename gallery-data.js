@@ -1,5 +1,5 @@
 // Add photos here. Every photo appears in View All; category selects its other album.
-// Categories: wedding, birthday, celebration (custom cakes), treats.
+// Categories: wedding, birthday, treats.
 // Omit category for a photo that should only appear in View All.
 window.CAKES_PHOTOS = [
   {
@@ -15,7 +15,7 @@ window.CAKES_PHOTOS = [
   {
     src: 'assets/images/custom-cakes/other-cake.jpeg',
     alt: 'Chocolate drip cake with chocolate decorations and the number 21',
-    width: 1179, height: 1409, category: 'celebration',
+    width: 1179, height: 1409,
   },
   {
     src: 'assets/images/other-treats/cupcakes.jpg',

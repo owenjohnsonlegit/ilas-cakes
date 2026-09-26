@@ -28,7 +28,7 @@ Successful submissions clear the form and explain that the cake is not booked. E
 
 ## Photography
 
-The homepage has linked covers for Wedding cakes, Birthday cakes, Custom cakes, Other Treats, and View All. Each opens `gallery.html`; the category is stored in the URL so albums can be shared and browser Back works normally.
+The homepage has linked covers for Wedding cakes, Birthday cakes, Other Treats, and View All. Each opens `gallery.html`; the category is stored in the URL so albums can be shared and browser Back works normally.
 
 To add photos:
 
@@ -45,7 +45,7 @@ To add photos:
 },
 ```
 
-Use `wedding`, `birthday`, `celebration` (Custom cakes), or `treats`. Omit `category` for photos that belong only in View All. Every entry appears in View All automatically, in file order. Put new entries first to show recent work first. Use the image’s actual pixel dimensions and descriptive alt text.
+Use `wedding`, `birthday`, or `treats`. Custom cake photos can stay in `assets/images/custom-cakes/` and appear in View All without a category. Omit `category` for photos that belong only in View All. Every entry appears in View All automatically, in file order. Put new entries first to show recent work first. Use the image’s actual pixel dimensions and descriptive alt text.
 
 Albums show 24 photos at a time with a Show more photos button and lazy-loaded images, so the collection can grow. Clicking a photo opens the original image. Export web-sized WebP or JPEG images (around 1200 pixels wide) to keep downloads reasonable. The homepage cover photos are edited separately in `index.html`.
 
