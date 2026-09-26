@@ -26,5 +26,5 @@
 .album-photo img{width:100%;height:auto}
 .album-photo:hover{outline:1px solid var(--rose);outline-offset:4px}
 #load-more{display:block;margin:32px auto 0}
-@media(max-width:700px){.album-collage{aspect-ratio:1.12}.album-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.album-navigation{gap:4px}.album-page{padding-block:15px 44px}}
+@media(max-width:700px){.album-link span{display:none}.album-collage{aspect-ratio:1.12}.album-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.album-navigation{gap:4px}.album-page{padding-block:15px 44px}}
 @media(max-width:380px){.album-photos{grid-template-columns:1fr}}
